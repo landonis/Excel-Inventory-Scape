@@ -1,0 +1,52 @@
+{
+    "domain":
+    {
+    "abc.com":
+        {
+        "json":
+        {
+            "find":["html tag", "class tag"],
+            "find_all":["html tag", "application/ld+json"],
+            "pass":1,
+            "named_objs":
+                [
+                    "table title example",
+                    "name",
+                    {
+                        "nested objs":
+                        {
+                            "very nested objs":["price", "availability"]
+                        }
+                    }
+                ]
+            },
+            "table title example":
+            {
+                "find":["html tag","class tag"],
+                "find_all":["html tag"],
+                "remove":["None"],
+                "pass":2
+            }
+        }
+    },
+    "update":
+        {
+            "on-empty":
+                {
+                    "set":"True",
+                    "value":"last_update"
+                },
+            "on-date":
+                {
+                    "set":"False",
+                    "value":"90"
+                }
+            
+        },
+    "excel-config":
+        {
+            "start_column":"A",
+            "start_row":"0",
+            "last_update":"A"
+        }
+}
