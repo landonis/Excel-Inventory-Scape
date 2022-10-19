@@ -4,7 +4,7 @@ from datetime import date
 from scrape import parsing_session
 from Sheet_man import Sheet_Man
 from Inventory_obj import Inventory_Object
-config_path='./configs.json'
+config_path='./config.json'
 default_config_path = './default.json'
 
 def build_config_file(path=config_path):
