@@ -1,0 +1,101 @@
+
+{
+    "domain":
+    {
+    "mobilesentrix.com":
+        {
+        "json":
+        {
+            "find":["div", "RviewDisplayMobile"],
+            "find_all":["script", "application/ld+json"],
+            "pass":1,
+            "named_objs":
+                [
+                    "sku",
+                    "name",
+                    {
+                        "offers":["price", "availability"]
+                    }
+                ]
+            },
+        "name":
+            {
+                "find":["div","product-name"],
+                "find_all":["h1"],
+                "remove":["None"],
+                "pass":2
+            },
+        "sku":
+            {
+                "find":["h2","skudisplayweb"],
+                "find_all":["span"],
+                "remove":["SKU"],
+                "pass":2
+            },
+        "price":
+            {
+                "find":["span","regular-price"],
+                "find_all":["span"],
+                "remove":["None"],
+                "pass":2
+            }   
+        },
+    "mobiledefenders.com":
+        {
+            "price":
+            {
+                "find":["span","regular-price"],
+                "find_all":["span"],
+                "remove":["None"],
+                "pass":2
+            },
+            "name":
+            {
+                "find":["div","product-name"],
+                "find_all":["h1"],
+                "remove":["None"],
+                "pass":2
+            },
+            "availability":
+            {
+                "find":["p","availability in-stock"],
+                "find_all":["span"],
+                "remove":["None"],
+                "pass":2
+            },
+            "sku":
+            {
+                "find":["div","product-shop col-sm-6"],
+                "find_all":["p"],
+                "remove":["None"],
+                "pass":2
+            }
+        }
+    },
+    "update":
+        {
+            "on-empty":
+                {
+                    "set":"True",
+                    "value":"last_update"
+                },
+            "on-date":
+                {
+                    "set":"False",
+                    "value":"90"
+                }
+            
+        },
+    "excel-config":
+        {
+            "start_column":"M",
+            "start_row":"2",
+            "title":"C",
+            "name":"D",
+            "href":"N",
+            "sku":"E",
+            "price":"F",
+            "availability":"G",
+            "last_update":"H"
+        }
+}
